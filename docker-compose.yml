@@ -1,0 +1,11 @@
+services:
+  newsbot:
+    build:
+      context: .
+    restart: "no"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
